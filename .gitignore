@@ -1,6 +1,7 @@
 .vscode/
 drools_data/
 kafka_data/
-moodle_code/
+moodle_code/*
+!moodle_code/local/
 moodle_database/
 moodle_environment/
