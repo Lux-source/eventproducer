@@ -1,6 +1,6 @@
 <?php
-require('../../config.php');
-require_once($CFG->libdir.'/formslib.php');
+require ('../../config.php');
+require_once ($CFG->libdir . '/formslib.php');
 
 $PAGE->set_url('/local/eventproducer/index.php');
 $PAGE->set_title(get_string('pluginname', 'local_eventproducer'));

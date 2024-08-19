@@ -2,15 +2,20 @@
 require('../../config.php');
 
 try {
-    $rk = new RdKafka\Producer();
-    $rk->addBrokers(get_config('local_eventproducer', 'kafka_server'));
+    // Seteo el Kafka REST Proxy URL
+    $kafkaRestProxyUrl = 'http://kafka-rest:8082';
 
-    // Guardar el productor en la sesión 
-    $_SESSION['kafka_producer'] = $rk;
 
-    echo json_encode(['status' => 'connected']);
+    $response = file_get_contents($kafkaRestProxyUrl . '/topics');
+
+    if ($response !== false) {
+        // Mock connection success
+        $_SESSION['kafka_connected'] = true;
+        echo json_encode(['status' => 'connected']);
+    } else {
+        throw new Exception('Could not connect to Kafka REST Proxy');
+    }
 } catch (Exception $e) {
     echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
     http_response_code(500);
 }
-?>
