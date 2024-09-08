@@ -9,7 +9,7 @@ try {
     $response = file_get_contents($kafkaRestProxyUrl . '/topics');
 
     if ($response !== false) {
-        // Mock connection success
+        //
         $_SESSION['kafka_connected'] = true;
         echo json_encode(['status' => 'connected']);
     } else {

@@ -10,4 +10,3 @@ function local_eventproducer_extend_navigation(global_navigation $nav)
     $node->showinflatnavigation = true;
 }
 
-?>

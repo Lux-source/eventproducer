@@ -26,5 +26,13 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Event Producer';
+$string['event_name'] = 'Event Name';
+$string['event_description'] = 'Event Description';
+$string['event_type'] = 'Event Type';
+$string['event_status'] = 'Status';
+$string['event_create'] = 'Create Event';
+$string['event_delete'] = 'Delete Event';
 $string['kafka_server'] = 'Kafka Server';
 $string['kafka_server_desc'] = 'Enter the Kafka server address (e.g., localhost:9092).';
+$string['kafka_connected'] = 'Connected to Kafka';
+$string['kafka_disconnected'] = 'Disconnected from Kafka';
