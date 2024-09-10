@@ -33,7 +33,8 @@ $conf->set('group.id', 'myConsumerGroup');
 
 // Configuracion de la lista de brokers de Kafka a los que los consumidores se conectará
 // Este caso, broker corre en la dirección del localhost en el puerto por defecto de Kafka 9092
-$conf->set('metadata.broker.list', '127.0.0.1:29092');
+//$conf->set('metadata.broker.list', '127.0.0.1:29092'); Esto funcionaba en local
+$conf->set('metadata.broker.list', 'kafka:9092'); // Configuracion para que funcione en contendor-docker
 
 $conf->set('auto.offset.reset', 'earliest');
 
