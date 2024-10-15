@@ -5,9 +5,7 @@ $conf = new RdKafka\Conf();
 
 // Configura la lista de brokers a los que se conectará el productor.
 // Aquí se establece que el broker está corriendo en 'localhost' en el puerto '9092'.
-//$conf->set('metadata.broker.list', 'localhost:29092'); Esta era la configuracion en local
-$conf->set('metadata.broker.list', 'kafka:9092'); // Configuración funcional en contenedor de docker
-
+$conf->set('metadata.broker.list', 'kafka:9092');
 
 // Opcional: Si necesitas garantizar que los mensajes se produzcan exactamente una vez y
 // mantener el orden original de producción, puedes habilitar la "idempotencia".
@@ -52,3 +50,4 @@ for ($flushRetries = 0; $flushRetries < 10; $flushRetries++) {
 if (RD_KAFKA_RESP_ERR_NO_ERROR !== $result) {
     throw new \RuntimeException('Was unable to flush, messages might be lost!');
 }
+
